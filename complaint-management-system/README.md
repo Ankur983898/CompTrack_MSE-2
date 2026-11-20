@@ -21,6 +21,11 @@ npm run dev
 ```
 Open http://localhost:5173
 
+## Deploy to Vercel
+The root `vercel.json` deploys the Vite client and Express API as separate services on one domain. The client is public at `/`; `/api/*` and `/uploads/*` route to the API. No private service bindings are needed because the browser calls the API through the same-origin public route.
+
+On Vercel, SQLite and uploaded files use the function's temporary filesystem. They are not durable and may differ between function instances, so this configuration is for a demo only; use persistent database and file storage before production. Automatic escalation still uses the existing in-process interval and is not guaranteed to run reliably in serverless functions.
+
 ## Demo accounts (password `password123`)
 | Email | Role |
 |---|---|

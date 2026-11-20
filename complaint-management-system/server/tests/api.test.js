@@ -140,7 +140,12 @@ describe('uploads', () => {
     const png = Buffer.concat([Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]), Buffer.alloc(20)]);
     const r = await send(student, png, 'photo.png');
     expect(r.status).toBe(201);
-    expect((await request(app).get(`/api/complaints/${r.body.id}`).set(as(student))).body.attachments).toHaveLength(1);
+    const complaint = (await request(app).get(`/api/complaints/${r.body.id}`).set(as(student))).body;
+    expect(complaint.attachments).toHaveLength(1);
+    const attachment = await request(app).get(`/uploads/${complaint.attachments[0].filename}`);
+    expect(attachment.status).toBe(200);
+    expect(attachment.headers['x-content-type-options']).toBe('nosniff');
+    expect(attachment.body).toEqual(png);
   });
 });
 
