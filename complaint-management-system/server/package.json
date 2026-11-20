@@ -1,0 +1,28 @@
+{
+  "name": "cms-server",
+  "version": "2.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "jest --runInBand --forceExit",
+    "migrate": "node src/db/cli.js migrate",
+    "seed": "node src/db/cli.js seed",
+    "backup": "node src/db/cli.js backup"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.3.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": { "jest": "^29.7.0", "supertest": "^7.0.0" },
+  "jest": { "testEnvironment": "node" }
+}

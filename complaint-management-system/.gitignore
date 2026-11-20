@@ -1,0 +1,4 @@
+node_modules
+server/cms.db
+server/uploads
+client/dist
