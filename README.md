@@ -24,17 +24,6 @@ CompTrack provides a centralized platform where users can register complaints, m
 - Reduce paperwork and manual complaint handling.
 - Improve communication between users and administrators.
 
-## 🛠️ Tech Stack
-
-> Add the exact technologies used in your implementation.
-
-| Component | Technology |
-|---|---|
-| Frontend | Add your frontend technology |
-| Backend | Add your backend technology |
-| Database | Add your database |
-| Development Tools | VS Code, Git, GitHub |
-
 ## ⚙️ Getting Started
 
 Follow these steps to run the project locally.
@@ -42,8 +31,7 @@ Follow these steps to run the project locally.
 ### Prerequisites
 
 - Git
-- Node.js and npm (if the project uses Node.js)
-- Required database (if applicable)
+- Node.js and npm 
 
 ### 1. Clone the Repository
 
